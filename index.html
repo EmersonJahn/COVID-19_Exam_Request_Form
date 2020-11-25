@@ -11,123 +11,298 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
-    
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="./js/script.js"></script>
-    
 </head>
 <body>
 
     <div class="container mt-4">
-        <div class="row">
-            <div class="col-md-12">
-                <label for="name">Nome completo do paciente <b>*</b></label>
-                <input type="text" id="name" class="form-control">
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-md-6">
-                <label for="birth-date">Data de nascimento <b>*</b></label>
-                <input type="text" id="birth-date" class="form-control">
-            </div>
-            <div class="col-md-6">
-                <label for="cpf">CPF <b>*</b></label>
-                <input type="text" id="cpf" class="form-control">
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-md-6">
-                <label for="adress">Endereço <b>*</b></label>
-                <input type="text" id="adress" class="form-control">
-            </div>
-            <div class="col-md-2">
-                <label for="adress-number">N° <b>*</b></label>
-                <input type="text" id="adress-number" class="form-control">
-            </div>
-            <div class="col-md-4">
-                <label for="adress-complement">Complemento <b>*</b></label>
-                <input type="text" id="adress-complement" class="form-control">
-            </div>
-        </div>
-        <div class="row mt-2">
-            <div class="col-md-7">
-                <label for="adress-city">Cidade <b>*</b></label>
-                <input type="text" id="adress-city" class="form-control">
-            </div>
-            <div class="col-md-2">
-                <label for="adress-state">Estado <b>*</b></label>
-                <input type="text" id="adress-state" class="form-control">
-            </div>
-            <div class="col-md-3">
-                <label for="adress-cep">CEP <b>*</b></label>
-                <input type="text" id="adress-cep" class="form-control">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12">
-                <hr>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-4">
-                <label for="first-symptom-date">Data do inicio dos sintomas <b>*</b></label>
-                <input type="text" id="first-symptom-date" class="form-control">
-            </div>
-            <div class="col-md-8 my-auto">
-                <label for="first-symptom-date">Sintomas</label>
-                <div class="ml-3 h-100">
-                    
-                    <input class="form-check-input" type="checkbox" id="symptom-garganta">
-                    <label class="form-check-label mr-5" for="symptom-garganta">
-                        Dor de garganta
-                    </label>
-                    
-                    <input class="form-check-input" type="checkbox" id="symptom-dispneia">
-                    <label class="form-check-label mr-5" for="symptom-dispneia">
-                        Dispneia
-                    </label>
-                    
-                    <input class="form-check-input" type="checkbox" id="symptom-febre">
-                    <label class="form-check-label mr-5" for="symptom-febre">
-                        Febre
-                    </label>
-                    
-                    <input class="form-check-input" type="checkbox" id="symptom-tosse">
-                    <label class="form-check-label mr-5" for="symptom-tosse">
-                        Tosse
-                    </label>
-                    
+
+        <div class="patient-information">
+
+            <div class="row">
+                <div class="col-12">
+                    <hr>
                 </div>
             </div>
+
+            <legend>INFORMAÇÃO DO PACIENTE</legend>
+
+            <div class="label-orange">
+
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                        <label for="name">Nome completo do paciente *</label>
+                        <input type="text" id="name" class="form-control">
+                    </div>
+                </div>
+            
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="birth-date">Data de nascimento *</label>
+                        <input type="text" id="birth-date" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="cpf">CPF *</label>
+                        <input type="text" id="cpf" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="row mt-2">
+                    <div class="col-md-6">
+                        <label for="adress">Endereço *</label>
+                        <input type="text" id="adress" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="adress-number">N° *</label>
+                        <input type="text" id="adress-number" class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                        <label for="adress-complement">Complemento *</label>
+                        <input type="text" id="adress-complement" class="form-control">
+                    </div>
+                </div>
+                
+                <div class="row mt-2">
+                    <div class="col-md-7">
+                        <label for="adress-city">Cidade *</label>
+                        <input type="text" id="adress-city" class="form-control">
+                    </div>
+                    <div class="col-md-2">
+                        <label for="adress-city">Estado *</label>
+                        <input type="text" id="adress-city" class="form-control">
+                    </div>
+                    <div class="col-md-3">
+                        <label for="adress-cep">CEP *</label>
+                        <input type="text" id="adress-cep" class="form-control">
+                    </div>
+                </div>
+
+                <div class="row mt-2">
+                    <div class="col">
+                        <label for="phone">Telefone com DDD (ou número de algum parente) *</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="number" id="phone1" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                        <input type="number" id="phone2" class="form-control mt-1 mt-md-0">
+                    </div>
+                </div>
+            
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <label for="mail">E-mail para envio dos resultados</label>
+                    <input type="text" id="mail" class="form-control">
+                </div>
+            </div>
+
+            <!-- <div class="row mt-2">
+
+                <div class="col-md-4">
+                    <div class="col-md-2">
+                        <label for="gender">Sexo</label>
+                    </div>
+                    <div class="col-md-1">
+                        <input class="form-check-input" type="radio" name="male" id="male" value="male"> Masculino
+                    </div>
+                    <div class="col-md-1">
+                        <input class="form-check-input" type="radio" name="female" id="female" value="female"> Feminino
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="name">A paciente está grávida ou com suspeita de gestação</label>
+                </div>
+                <div class="col-md-1">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"> Sim
+                </div>
+                <div class="col-md-1">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1"> Não
+                </div>
+            </div> -->
+
+            <div class="row mt-2">
+                <div class="col-md-4">
+                    <label for="gender">Sexo</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-gender" id="male" value="male">
+                        <label class="form-check-label" for="male">Masculino</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-gender" id="female" value="female"> 
+                        <label class="form-check-label" for="female">Feminino</label>
+                    </div>
+                </div>
+
+                <div class="col-md-8">
+                    <label for="pregnant">A paciente está grávida ou com suspeita de gestação</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-pregnant" id="yes-pregnant" value="yes-pregnant">
+                        <label class="form-check-label" for="yes-pregnant">Sim</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-pregnant" id="no-pregnant" value="no-pregnant"> 
+                        <label class="form-check-label" for="no-pregnant">Não</label>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
+
         <div class="row">
             <div class="col-12">
                 <hr>
             </div>
         </div>
-        <div class="row mt-2">
-            <div class="col-md-12">
-                
-                <div id="risk-box-1" class="risk-box risk-box-low"></div>
-                
-                <div id="risk-box-2" class="risk-box risk-box-low"></div>
-                
-                <div id="risk-box-3" class="risk-box risk-box-medium"></div>
-                
-                <div id="risk-box-4" class="risk-box risk-box-medium"></div>
-                
-                <div id="risk-box-5" class="risk-box risk-box-high"></div>
-                
-                <div id="risk-box-6" class="risk-box risk-box-high"></div>
-                
-                <div id="risk-box-7" class="risk-box risk-box-high"></div>
-                
-                <div id="risk-box-8" class="risk-box risk-box-high"></div>
-                
-                <div id="risk-box-9" class="risk-box risk-box-high"></div>
-                
+
+        <div class="clinic-information">
+
+            <div class="row">
+                <div class="col-md-7">
+                    <legend>INFORMAÇÃO CLÍNICA DO PACIENTE</legend>
+                </div>
+                <div class="col-md-5">
+                    <label for="patient-id">ID do paciente (se houver)</label>
+                    <input type="text" id="patient-id" class="form-control">
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <label for="symptoms-15-days">Você teve, nos últimos 15 dias, tosse, perda de olfato/paldar, cansaço, febre, dor de garganta ou outros?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-symptoms-15-days" id="yes-symptoms-15-days" value="yes-symptoms-15-days">
+                        <label class="form-check-label" for="yes-symptoms-15-days">Sim</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-symptoms-15-days" id="no-symptoms-15-days" value="no-symptoms-15-days"> 
+                        <label class="form-check-label" for="no-symptoms-15-days">Não</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <label for="contact-15-days">Você esteve em contato com uma pessoa diagnosticada com COVID-19 nos últimos 15 dias?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-contact-15-days" id="yes-contact-15-days" value="yes-contact-15-days">
+                        <label class="form-check-label" for="yes-contact-15-days">Sim</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-contact-15-days" id="no-contact-15-days" value="no-contact-15-days"> 
+                        <label class="form-check-label" for="no-contact-15-days">Não</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <label for="health-center-15-days">Você visitou ou entrou em um centro de saúde nos últimos 15 dias?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-health-center-15-days" id="yes-health-center-15-days" value="yes-health-center-15-days">
+                        <label class="form-check-label" for="yes-health-center-15-days">Sim</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-health-center-15-days" id="no-health-center-15-days" value="no-health-center-15-days"> 
+                        <label class="form-check-label" for="no-health-center-15-days">Não</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <label for="essential-services">Você participou (ou algum membro direto da família) em serviços essenciais (médicos, limpeza, transporte, etc)?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-essential-services" id="yes-essential-services" value="yes-essential-services">
+                        <label class="form-check-label" for="yes-essential-services">Sim</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-essential-services" id="no-essential-services" value="no-essential-services"> 
+                        <label class="form-check-label" for="no-essential-services">Não</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="first-symptom-date">Data do inicio dos sintomas <b>*</b></label>
+                    <input type="text" id="first-symptom-date" class="form-control">
+                </div>
+                <div class="col-md-8 my-auto">
+                    <label for="first-symptom-date">Sintomas</label>
+                    <div class="ml-3 h-100">
+                        
+                        <input class="form-check-input" type="checkbox" id="symptom-garganta">
+                        <label class="form-check-label mr-5" for="symptom-garganta">
+                            Dor de garganta
+                        </label>
+                        
+                        <input class="form-check-input" type="checkbox" id="symptom-dispneia">
+                        <label class="form-check-label mr-5" for="symptom-dispneia">
+                            Dispneia
+                        </label>
+                        
+                        <input class="form-check-input" type="checkbox" id="symptom-febre">
+                        <label class="form-check-label mr-5" for="symptom-febre">
+                            Febre
+                        </label>
+                        
+                        <input class="form-check-input" type="checkbox" id="symptom-tosse">
+                        <label class="form-check-label mr-5" for="symptom-tosse">
+                            Tosse
+                        </label>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-2">
+                <div class="col">
+                    <label for="patient-status">Qual é o estado atual do paciente?</label>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-patient-status" id="home-patient-status" value="home-patient-status">
+                        <label class="form-check-label" for="home-patient-status">Em casa</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-patient-status" id="hospital-patient-status" value="hospital-patient-status"> 
+                        <label class="form-check-label" for="hospital-patient-status">No hospital</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="radio-patient-status" id="other-patient-status" value="other-patient-status"> 
+                        <label class="form-check-label" for="other-patient-status">Outro (especifique)</label>
+                        <input class="ml-2" type="text"> <!-- Obrigar preencimento caso assinalar o radio outro  -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <hr>
             </div>
         </div>
+
+        <div class="row mt-2">
+            <div class="col-md-12">
+                <div id="risk-box-1" class="risk-box risk-box-low"></div>
+                <div id="risk-box-2" class="risk-box risk-box-low"></div>
+                <div id="risk-box-3" class="risk-box risk-box-medium"></div>
+                <div id="risk-box-4" class="risk-box risk-box-medium"></div>
+                <div id="risk-box-5" class="risk-box risk-box-high"></div>
+                <div id="risk-box-6" class="risk-box risk-box-high"></div>
+                <div id="risk-box-7" class="risk-box risk-box-high"></div>
+                <div id="risk-box-8" class="risk-box risk-box-high"></div>
+                <div id="risk-box-9" class="risk-box risk-box-high"></div>
+            </div>
+        </div>
+
     </div>
     
 </body>

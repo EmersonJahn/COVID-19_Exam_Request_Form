@@ -1,3 +1,16 @@
+.label-orange label {
+    font-weight: bold;
+    color: rgb(238, 156, 3);
+}
+
+hr {
+    border-top: 5px solid rgba(16, 55, 128, 0.781);
+}
+
+legend {
+    font-weight: bold;
+    color: gray;
+}
 
 .risk-box {
     display: inline-block;
