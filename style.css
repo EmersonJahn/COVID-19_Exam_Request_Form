@@ -1,0 +1,19 @@
+
+.risk-box {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    border: 1px solid black;
+}
+
+.risk-box-low.active {
+    background-color: green;
+}
+
+.risk-box-medium.active {
+    background-color: yellow;
+}
+
+.risk-box-high.active {
+    background-color: red;
+}

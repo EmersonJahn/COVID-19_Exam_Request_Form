@@ -9,7 +9,12 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/css/bootstrap-datepicker.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <script src="./js/script.js"></script>
+    
 </head>
 <body>
 
@@ -50,12 +55,77 @@
                 <input type="text" id="adress-city" class="form-control">
             </div>
             <div class="col-md-2">
-                <label for="adress-city">Estado <b>*</b></label>
-                <input type="text" id="adress-city" class="form-control">
+                <label for="adress-state">Estado <b>*</b></label>
+                <input type="text" id="adress-state" class="form-control">
             </div>
             <div class="col-md-3">
                 <label for="adress-cep">CEP <b>*</b></label>
                 <input type="text" id="adress-cep" class="form-control">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <label for="first-symptom-date">Data do inicio dos sintomas <b>*</b></label>
+                <input type="text" id="first-symptom-date" class="form-control">
+            </div>
+            <div class="col-md-8 my-auto">
+                <label for="first-symptom-date">Sintomas</label>
+                <div class="ml-3 h-100">
+                    
+                    <input class="form-check-input" type="checkbox" id="symptom-garganta">
+                    <label class="form-check-label mr-5" for="symptom-garganta">
+                        Dor de garganta
+                    </label>
+                    
+                    <input class="form-check-input" type="checkbox" id="symptom-dispneia">
+                    <label class="form-check-label mr-5" for="symptom-dispneia">
+                        Dispneia
+                    </label>
+                    
+                    <input class="form-check-input" type="checkbox" id="symptom-febre">
+                    <label class="form-check-label mr-5" for="symptom-febre">
+                        Febre
+                    </label>
+                    
+                    <input class="form-check-input" type="checkbox" id="symptom-tosse">
+                    <label class="form-check-label mr-5" for="symptom-tosse">
+                        Tosse
+                    </label>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <hr>
+            </div>
+        </div>
+        <div class="row mt-2">
+            <div class="col-md-12">
+                
+                <div id="risk-box-1" class="risk-box risk-box-low"></div>
+                
+                <div id="risk-box-2" class="risk-box risk-box-low"></div>
+                
+                <div id="risk-box-3" class="risk-box risk-box-medium"></div>
+                
+                <div id="risk-box-4" class="risk-box risk-box-medium"></div>
+                
+                <div id="risk-box-5" class="risk-box risk-box-high"></div>
+                
+                <div id="risk-box-6" class="risk-box risk-box-high"></div>
+                
+                <div id="risk-box-7" class="risk-box risk-box-high"></div>
+                
+                <div id="risk-box-8" class="risk-box risk-box-high"></div>
+                
+                <div id="risk-box-9" class="risk-box risk-box-high"></div>
+                
             </div>
         </div>
     </div>
