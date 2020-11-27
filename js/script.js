@@ -5,10 +5,23 @@ $(() => {
    
     $('#cpf').mask('000.000.000-00');
     $('#adress-cep').mask('00000-000');
+    $('#phone1').mask('(00) 0000-0000');
+    $('#phone2').mask('(00) 0000-0000');
     
     refreshRiskBoxes();
     
 });
+
+function resetForm() {
+    riskLevel = 0;
+    refreshRiskBoxes();
+}
+
+function recalculateRisk() {
+    
+    
+    
+}
 
 function refreshRiskBoxes() {
     
