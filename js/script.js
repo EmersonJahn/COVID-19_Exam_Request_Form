@@ -1,13 +1,13 @@
 'use strict';
 
-var riskLevel = 7;
+var riskLevel = 0;
 
 $(() => {
    
     $('#cpf').mask('000.000.000-00');
     $('#adress-cep').mask('00000-000');
-    $('#phone1').mask('(00) 0000-0000');
-    $('#phone2').mask('(00) 0000-0000');
+    $('#phone1').mask('(00) 00000-0000');
+    $('#phone2').mask('(00) 00000-0000');
     
     refreshRiskBoxes();
     
@@ -91,7 +91,30 @@ function validateForm() {
         isValid = false;
     }
     
+    const phoneNum1 = $('#phone1').cleanVal();
+    if (!phoneNum1 || phoneNum1.length == 0 ) {
+        addErrorFeedbackToInput('phone1', 'Campo obrigatório!');
+        firstErrorInput = firstErrorInput ?? 'phone1';
+        isValid = false;
+    } else if (phoneNum1.length !== 11) {
+        addErrorFeedbackToInput('phone1', 'Telefone inválido!');
+        firstErrorInput = firstErrorInput ?? 'phone1';
+        isValid = false;
+    }
     
+    const phoneNum2 = $('#phone2').cleanVal();
+    if (phoneNum2 && phoneNum2.length !== 11) {
+        addErrorFeedbackToInput('phone2', 'Telefone inválido!');
+        firstErrorInput = firstErrorInput ?? 'phone2';
+        isValid = false;
+    }
+    
+    const mail = $('#mail')[0].value;
+    if (mail && !validateEmail(mail)) {
+        addErrorFeedbackToInput('mail', 'E-mail inválido!');
+        firstErrorInput = firstErrorInput ?? 'mail';
+        isValid = false;
+    }
     
     if (isValid) {
         alert('formulário válido!');
@@ -119,13 +142,54 @@ function addErrorFeedbackToInput(elementId, error) {
     const element = $("#" + elementId);
     element.addClass('is-invalid');
     $('#invalid-feedback-' + elementId).html(error);
-    // alert(error);
-    // element.focus();
 }
 
 function resetForm() {
     riskLevel = 0;
     refreshRiskBoxes();
+}
+
+function calculateRisk() {
+    
+    let newRiskLevel = 0;
+    
+    const mainForm = document.forms[0];
+    
+    if (mainForm['radio-symptoms-15-days'].value === 'yes') {
+        ++newRiskLevel;
+    }
+    
+    if (mainForm['radio-contact-15-days'].value === 'yes') {
+        ++newRiskLevel;
+    }
+    
+    if (mainForm['radio-health-center-15-days'].value === 'yes') {
+        ++newRiskLevel;
+    }
+    
+    if (mainForm['radio-essential-services'].value === 'yes') {
+        ++newRiskLevel;
+    }
+    
+    if (mainForm['checkbox-symptom-garganta'].checked) {
+        ++newRiskLevel;
+    }
+    
+    if (mainForm['checkbox-symptom-dispneia'].checked) {
+        ++newRiskLevel;
+    }
+    
+    if (mainForm['checkbox-symptom-febre'].checked) {
+        ++newRiskLevel;
+    }
+    
+    if (mainForm['checkbox-symptom-tosse'].checked) {
+        ++newRiskLevel;
+    }
+    
+    riskLevel = newRiskLevel;
+    refreshRiskBoxes();
+    
 }
 
 function validateCPF(c){
@@ -166,6 +230,11 @@ function validateCPF(c){
         return true;
     }
     return false;
+}
+
+function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(email);
 }
 
 function refreshRiskBoxes() {

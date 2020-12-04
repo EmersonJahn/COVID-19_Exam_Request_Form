@@ -94,9 +94,11 @@
                 <div class="row">
                     <div class="col-md-6">
                         <input type="text" id="phone1" class="form-control">
+                        <div class="invalid-feedback" id="invalid-feedback-phone1"></div>
                     </div>
                     <div class="col-md-6">
                         <input type="text" id="phone2" class="form-control mt-1 mt-md-0">
+                        <div class="invalid-feedback" id="invalid-feedback-phone2"></div>
                     </div>
                 </div>
             
@@ -106,6 +108,7 @@
                 <div class="col">
                     <label for="mail">E-mail para envio dos resultados</label>
                     <input type="text" id="mail" class="form-control">
+                    <div class="invalid-feedback" id="invalid-feedback-mail"></div>
                 </div>
             </div>
 
@@ -185,11 +188,11 @@
                 <div class="col">
                     <label for="symptoms-15-days">Você teve, nos últimos 15 dias, tosse, perda de olfato/paldar, cansaço, febre, dor de garganta ou outros?</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="radio-symptoms-15-days" id="yes-symptoms-15-days" value="yes-symptoms-15-days">
+                        <input class="form-check-input" type="radio" name="radio-symptoms-15-days" id="yes-symptoms-15-days" value="yes" onchange="calculateRisk()">
                         <label class="form-check-label" for="yes-symptoms-15-days">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="radio-symptoms-15-days" id="no-symptoms-15-days" value="no-symptoms-15-days"> 
+                        <input class="form-check-input" type="radio" name="radio-symptoms-15-days" id="no-symptoms-15-days" value="no" onchange="calculateRisk()"> 
                         <label class="form-check-label" for="no-symptoms-15-days">Não</label>
                     </div>
                 </div>
@@ -199,11 +202,11 @@
                 <div class="col">
                     <label for="contact-15-days">Você esteve em contato com uma pessoa diagnosticada com COVID-19 nos últimos 15 dias?</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="radio-contact-15-days" id="yes-contact-15-days" value="yes-contact-15-days">
+                        <input class="form-check-input" type="radio" name="radio-contact-15-days" id="yes-contact-15-days" value="yes" onchange="calculateRisk()">
                         <label class="form-check-label" for="yes-contact-15-days">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="radio-contact-15-days" id="no-contact-15-days" value="no-contact-15-days"> 
+                        <input class="form-check-input" type="radio" name="radio-contact-15-days" id="no-contact-15-days" value="no" onchange="calculateRisk()"> 
                         <label class="form-check-label" for="no-contact-15-days">Não</label>
                     </div>
                 </div>
@@ -213,11 +216,11 @@
                 <div class="col">
                     <label for="health-center-15-days">Você visitou ou entrou em um centro de saúde nos últimos 15 dias?</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="radio-health-center-15-days" id="yes-health-center-15-days" value="yes-health-center-15-days">
+                        <input class="form-check-input" type="radio" name="radio-health-center-15-days" id="yes-health-center-15-days" value="yes" onchange="calculateRisk()">
                         <label class="form-check-label" for="yes-health-center-15-days">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="radio-health-center-15-days" id="no-health-center-15-days" value="no-health-center-15-days"> 
+                        <input class="form-check-input" type="radio" name="radio-health-center-15-days" id="no-health-center-15-days" value="no" onchange="calculateRisk()"> 
                         <label class="form-check-label" for="no-health-center-15-days">Não</label>
                     </div>
                 </div>
@@ -227,11 +230,11 @@
                 <div class="col">
                     <label for="essential-services">Você participou (ou algum membro direto da família) em serviços essenciais (médicos, limpeza, transporte, etc)?</label>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="radio-essential-services" id="yes-essential-services" value="yes-essential-services">
+                        <input class="form-check-input" type="radio" name="radio-essential-services" id="yes-essential-services" value="yes" onchange="calculateRisk()">
                         <label class="form-check-label" for="yes-essential-services">Sim</label>
                     </div>
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="radio-essential-services" id="no-essential-services" value="no-essential-services"> 
+                        <input class="form-check-input" type="radio" name="radio-essential-services" id="no-essential-services" value="no" onchange="calculateRisk()"> 
                         <label class="form-check-label" for="no-essential-services">Não</label>
                     </div>
                 </div>
@@ -246,22 +249,22 @@
                     <label for="first-symptom-date">Sintomas</label>
                     <div class="ml-3 h-100">
                         
-                        <input class="form-check-input" type="checkbox" id="symptom-garganta">
+                        <input class="form-check-input" type="checkbox" id="symptom-garganta" name="checkbox-symptom-garganta" onchange="calculateRisk()">
                         <label class="form-check-label mr-5" for="symptom-garganta">
                             Dor de garganta
                         </label>
                         
-                        <input class="form-check-input" type="checkbox" id="symptom-dispneia">
+                        <input class="form-check-input" type="checkbox" id="symptom-dispneia" name="checkbox-symptom-dispneia" onchange="calculateRisk()">
                         <label class="form-check-label mr-5" for="symptom-dispneia">
                             Dispneia
                         </label>
                         
-                        <input class="form-check-input" type="checkbox" id="symptom-febre">
+                        <input class="form-check-input" type="checkbox" id="symptom-febre" name="checkbox-symptom-febre" onchange="calculateRisk()">
                         <label class="form-check-label mr-5" for="symptom-febre">
                             Febre
                         </label>
                         
-                        <input class="form-check-input" type="checkbox" id="symptom-tosse">
+                        <input class="form-check-input" type="checkbox" id="symptom-tosse" name="checkbox-symptom-tosse" onchange="calculateRisk()">
                         <label class="form-check-label mr-5" for="symptom-tosse">
                             Tosse
                         </label>
