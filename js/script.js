@@ -18,8 +18,47 @@ $(() => {
         }
         return true;
     });
+
+    // $("#calendario").datepicker();
     
+    // $( "#calendario" ).datepicker({
+    //     showOn: "button",
+    //     buttonImage: "calendario.png",
+    //     buttonImageOnly: true,
+    //     changeMonth: true,
+    //     changeYear: true,
+    
+    
+    //     // TODO para traduzir o calendario
+    //     // dateFormat: 'dd/mm/yy',
+    //     // dayNames: ['Domingo','Segunda','Terça','Quarta','Quinta','Sexta','Sábado','Domingo'],
+    //     // dayNamesMin: ['D','S','T','Q','Q','S','S','D'],
+    //     // dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb','Dom'],
+    //     // monthNames: ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+    //     // monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'],
+    // });
 });
+
+// $(document).ready(function() {
+
+//     $('#calendario').datetimepicker({
+//         format: 'dd/mm/yyyy'
+//     });
+// });
+
+// $(document).ready(function() {   
+    
+//     var userLang = navigator.language || navigator.userLanguage;   
+
+//     var options = $.extend({}, // empty object     
+//         $.datepicker.regional[userLang], {   
+//             dateFormat: "mm/dd/yy"   
+//         } // your custom options     
+//     );   
+
+//     $("#calendario").datepicker(options);   
+// }); 
+
 
 function validateForm() {
     
