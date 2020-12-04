@@ -1,6 +1,7 @@
 'use strict';
 
-var riskLevel = 0;
+let riskLevel = 0;
+let markAllGreen = false;
 
 $(() => {
    
@@ -184,11 +185,28 @@ function addErrorFeedbackToInput(elementId, error) {
 }
 
 function resetForm() {
+    markAllGreen = false;
     riskLevel = 0;
     refreshRiskBoxes();
 }
 
 function calculateRisk() {
+    
+    const symptomStartStr = $('#first-symptom-date')[0].value;
+    if (symptomStartStr.length === 10 ) {
+        
+        const date = new Date(symptomStartStr);
+        
+        const days = getDiffInDays(date);
+        
+        if (date.getFullYear() >= 2000 && days > 15) {
+            riskLevel = 0;
+            markAllGreen = true;
+            refreshRiskBoxes();
+            return;
+        }
+        
+    }
     
     let newRiskLevel = 0;
     
@@ -226,6 +244,7 @@ function calculateRisk() {
         ++newRiskLevel;
     }
     
+    markAllGreen = false;
     riskLevel = newRiskLevel;
     refreshRiskBoxes();
     
@@ -282,13 +301,37 @@ function refreshRiskBoxes() {
         
         const elem = $('#risk-box-' + i);
         
-        if (riskLevel >= i) {
-            elem.addClass('active');
-        } else {
+        if (markAllGreen) {
+            elem.addClass('force-green');
             elem.removeClass('active');
+        } else {
+            
+            elem.removeClass('force-green');
+            
+            if (riskLevel >= i) {
+                elem.addClass('active');
+            } else {
+                elem.removeClass('active');
+            }
+            
         }
         
     }
     
 }
 
+function getDiffInDays(date) {
+    
+    var datetime = date.getTime();
+    var now = new Date().getTime();
+
+    if (datetime < now) {
+        var milisec_diff = now - datetime;
+    } else {
+        var milisec_diff = datetime - now;
+    }
+
+    var days = Math.floor(milisec_diff / 1000 / 60 / (60 * 24));
+    
+    return days;
+}

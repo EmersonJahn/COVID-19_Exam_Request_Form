@@ -30,3 +30,7 @@ legend {
 .risk-box-high.active {
     background-color: red;
 }
+
+.force-green {
+    background-color: green !important;
+}
