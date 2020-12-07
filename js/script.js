@@ -65,20 +65,23 @@ function validateForm() {
     
     $('.is-invalid').removeClass('is-invalid');
     
-    let isValid = true;
     let firstErrorInput;
     
     let error = '';
     if (error = verifyTextInput('name', 10)) {
         addErrorFeedbackToInput('name', error);
         firstErrorInput = firstErrorInput ?? 'name';
-        isValid = false;
+    }
+    
+    const birthElement = $('#birth-date')[0];
+    if (!birthElement.value || birthElement.value.length != 10) {
+        addErrorFeedbackToInput('birth-date', 'Campo obrigatório!');
+        firstErrorInput = firstErrorInput ?? 'birth-date';
     }
     
     if (error = verifyTextInput('cpf')) {
         addErrorFeedbackToInput('cpf', error);
         firstErrorInput = firstErrorInput ?? 'cpf';
-        isValid = false;
     }
     
     const cpf = $('#cpf').cleanVal();
@@ -86,77 +89,65 @@ function validateForm() {
     if (!validateCPF(cpf)) {
         addErrorFeedbackToInput('cpf', 'CPF inválido!');
         firstErrorInput = firstErrorInput ?? 'cpf';
-        isValid = false;
     }
     
     if (error = verifyTextInput('adress')) {
         addErrorFeedbackToInput('adress', error);
         firstErrorInput = firstErrorInput ?? 'adress';
-        isValid = false;
     }
     
     if (error = verifyTextInput('adress-number')) {
         addErrorFeedbackToInput('adress-number', error);
         firstErrorInput = firstErrorInput ?? 'adress-number';
-        isValid = false;
     }
     
     if (error = verifyTextInput('adress-complement')) {
         addErrorFeedbackToInput('adress-complement', error);
         firstErrorInput = firstErrorInput ?? 'adress-complement';
-        isValid = false;
     }
     
     if (error = verifyTextInput('adress-city')) {
         addErrorFeedbackToInput('adress-city', error);
         firstErrorInput = firstErrorInput ?? 'adress-city';
-        isValid = false;
     }
     
     if (error = verifyTextInput('adress-city')) {
         addErrorFeedbackToInput('adress-city', error);
         firstErrorInput = firstErrorInput ?? 'adress-city';
-        isValid = false;
     }
     
     if (error = verifyTextInput('adress-state')) {
         addErrorFeedbackToInput('adress-state', error);
         firstErrorInput = firstErrorInput ?? 'adress-state';
-        isValid = false;
     }
     
     if (error = verifyTextInput('adress-cep')) {
         addErrorFeedbackToInput('adress-cep', error);
         firstErrorInput = firstErrorInput ?? 'adress-cep';
-        isValid = false;
     }
     
     const phoneNum1 = $('#phone1').cleanVal();
     if (!phoneNum1 || phoneNum1.length == 0 ) {
         addErrorFeedbackToInput('phone1', 'Campo obrigatório!');
         firstErrorInput = firstErrorInput ?? 'phone1';
-        isValid = false;
     } else if (phoneNum1.length !== 11) {
         addErrorFeedbackToInput('phone1', 'Telefone inválido!');
         firstErrorInput = firstErrorInput ?? 'phone1';
-        isValid = false;
     }
     
     const phoneNum2 = $('#phone2').cleanVal();
     if (phoneNum2 && phoneNum2.length !== 11) {
         addErrorFeedbackToInput('phone2', 'Telefone inválido!');
         firstErrorInput = firstErrorInput ?? 'phone2';
-        isValid = false;
     }
     
     const mail = $('#mail')[0].value;
     if (mail && !validateEmail(mail)) {
         addErrorFeedbackToInput('mail', 'E-mail inválido!');
         firstErrorInput = firstErrorInput ?? 'mail';
-        isValid = false;
     }
     
-    if (isValid) {
+    if (!firstErrorInput) {
         alert('formulário válido!');
         return true;
     }

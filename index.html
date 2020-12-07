@@ -38,7 +38,7 @@
 
             <div class="label-orange">
 
-                <div class="row mt-2">
+                <div class="row">
                     <div class="col-md-12">
                         <label for="name">Nome completo do paciente *</label>
                         <input type="text" id="name" class="form-control">
@@ -46,56 +46,57 @@
                     </div>
                 </div>
             
-                <div class="row mt-2">
-                    <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6 mt-3 mt-md-2">
                         <label for="birth-date">Data de nascimento *</label>
-                        <input type="text" id="birth-date" class="form-control">
+                        <input type="date" id="birth-date" class="form-control">
+                        <div class="invalid-feedback" id="invalid-feedback-birth-date"></div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 mt-3 mt-md-2">
                         <label for="cpf">CPF *</label>
                         <input type="text" id="cpf" class="form-control">
                         <div class="invalid-feedback" id="invalid-feedback-cpf"></div>
                     </div>
                 </div>
                 
-                <div class="row mt-2">
-                    <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6 mt-3 mt-md-2">
                         <label for="adress">Endereço *</label>
                         <input type="text" id="adress" class="form-control" >
                         <div class="invalid-feedback" id="invalid-feedback-adress"></div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 mt-3 mt-md-2">
                         <label for="adress-number">N° *</label>
                         <input type="text" id="adress-number" class="form-control">
                         <div class="invalid-feedback" id="invalid-feedback-adress-number"></div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-4 mt-3 mt-md-2">
                         <label for="adress-complement">Complemento *</label>
                         <input type="text" id="adress-complement" class="form-control">
                         <div class="invalid-feedback" id="invalid-feedback-adress-complement"></div>
                     </div>
                 </div>
                 
-                <div class="row mt-2">
-                    <div class="col-md-7">
+                <div class="row">
+                    <div class="col-md-7 mt-3 mt-md-2">
                         <label for="adress-city">Cidade *</label>
                         <input type="text" id="adress-city" class="form-control">
                         <div class="invalid-feedback" id="invalid-feedback-adress-city"></div>
                     </div>
-                    <div class="col-md-2">
+                    <div class="col-md-2 mt-3 mt-md-2">
                         <label for="adress-state">Estado *</label>
                         <input type="text" id="adress-state" class="form-control">
                         <div class="invalid-feedback" id="invalid-feedback-adress-state"></div>
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 mt-3 mt-md-2">
                         <label for="adress-cep">CEP *</label>
                         <input type="text" id="adress-cep" class="form-control">
                         <div class="invalid-feedback" id="invalid-feedback-adress-cep"></div>
                     </div>
                 </div>
 
-                <div class="row mt-2">
-                    <div class="col">
+                <div class="row">
+                    <div class="col-12 mt-3 mt-md-2">
                         <label for="phone">Telefone com DDD (ou número de algum parente) *</label>
                     </div>
                 </div>
@@ -112,17 +113,19 @@
             
             </div>
 
-            <div class="row mt-2">
-                <div class="col">
+            <div class="row">
+                <div class="col-12 mt-3 mt-md-2">
                     <label for="mail">E-mail para envio dos resultados</label>
                     <input type="text" id="mail" class="form-control">
                     <div class="invalid-feedback" id="invalid-feedback-mail"></div>
                 </div>
             </div>
 
-            <div class="row mt-2">
-                <div class="col-md-4">
+            <div class="row mt-md-2">
+                <div class="col-12 col-md-1 mt-3 mt-md-2">
                     <label for="gender">Sexo</label>
+                </div>
+                <div class="col-md-3 my-auto">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="radio-gender" id="male" value="male">
                         <label class="form-check-label" for="male">Masculino</label>
@@ -133,8 +136,10 @@
                     </div>
                 </div>
 
-                <div class="col-md-8">
+                <div class="col-md-5 mt-3 mt-md-2">
                     <label for="pregnant">A paciente está grávida ou com suspeita de gestação</label>
+                </div>
+                <div class="col-md-3 my-auto">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="radio-pregnant" id="yes-pregnant" value="yes-pregnant">
                         <label class="form-check-label" for="yes-pregnant">Sim</label>
@@ -167,7 +172,7 @@
                 </div>
             </div>
 
-            <div class="row mt-2">
+            <div class="row mt-3 mt-md-2">
                 <div class="col">
                     <label for="symptoms-15-days">Você teve, nos últimos 15 dias, tosse, perda de olfato/paldar, cansaço, febre, dor de garganta ou outros?</label>
                     <div class="form-check form-check-inline">
@@ -181,7 +186,7 @@
                 </div>
             </div>
 
-            <div class="row mt-2">
+            <div class="row mt-3 mt-md-2">
                 <div class="col">
                     <label for="contact-15-days">Você esteve em contato com uma pessoa diagnosticada com COVID-19 nos últimos 15 dias?</label>
                     <div class="form-check form-check-inline">
@@ -195,7 +200,7 @@
                 </div>
             </div>
 
-            <div class="row mt-2">
+            <div class="row mt-3 mt-md-2">
                 <div class="col">
                     <label for="health-center-15-days">Você visitou ou entrou em um centro de saúde nos últimos 15 dias?</label>
                     <div class="form-check form-check-inline">
@@ -209,7 +214,7 @@
                 </div>
             </div>
 
-            <div class="row mt-2">
+            <div class="row mt-3 mt-md-2">
                 <div class="col">
                     <label for="essential-services">Você participou (ou algum membro direto da família) em serviços essenciais (médicos, limpeza, transporte, etc)?</label>
                     <div class="form-check form-check-inline">
@@ -223,12 +228,12 @@
                 </div>
             </div>
 
-            <div class="row">
+            <div class="row mt-3 mt-md-2">
                 <div class="col-md-4">
                     <label for="first-symptom-date">Data do inicio dos sintomas <b>*</b></label>
                     <input type="date" id="first-symptom-date" class="form-control" onchange="calculateRisk()">
                 </div>
-                <div class="col-md-8 my-auto">
+                <div class="col-md-8 mt-3 mt-md-0">
                     <label for="first-symptom-date">Sintomas</label>
                     <div class="ml-3 h-100">
                         
@@ -256,8 +261,8 @@
                 </div>
             </div>
 
-            <div class="row mt-2">
-                <div class="col">
+            <div class="row mt-3 mt-md-2">
+                <div class="col-12">
                     <label for="patient-status">Qual é o estado atual do paciente?</label>
                     <div class="form-check form-check-inline">
                         <input class="form-check-input" type="radio" name="radio-patient-status" id="home-patient-status" value="home-patient-status">
